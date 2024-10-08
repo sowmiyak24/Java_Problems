@@ -1,0 +1,25 @@
+import java.util.*;
+public class Chocoshop {
+    public static void main(String[] args){
+        Scanner obj=new Scanner(System.in);
+        int size=obj.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++){
+            arr[i]=obj.nextInt();
+        }
+        int buy=obj.nextInt();
+        System.out.print(Shop(size,arr,buy));
+    }
+    public static int Shop(int size,int arr[],int buy){
+        if(size<buy){
+            return -1;
+        }
+        Arrays.sort(arr);
+        int total=0;
+        for(int i=0;i<buy;i++){
+            total+=arr[i];
+
+        }
+        return total;
+    }
+}
